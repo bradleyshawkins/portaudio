@@ -1047,3 +1047,7 @@ func getBuffer(s *reflect.SliceHeader, p *C.PaStreamParameters) (unsafe.Pointer,
 		return unsafe.Pointer(&buf[0]), frames, nil
 	}
 }
+
+func Sleep(d time.Duration) {
+	C.Pa_Sleep(C.long(d))
+}
